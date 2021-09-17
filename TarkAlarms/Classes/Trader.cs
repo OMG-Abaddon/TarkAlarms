@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -44,21 +45,34 @@ namespace TarkAlarms.Classes
 
     public class Trader
     {
-        private string pathToWavAlert;
+        private readonly string pathToWavAlert;
+        private readonly MediaPlayer mediaPlayer;
 
         public string Name { get; set; }
         public DispatcherTimer RestockTimer { get; set; }
         public FrameworkElement boundControl;
-
+        public bool isAlarmEnabled;
 
         public Trader(string name, TimeSpan restockTime)
         {
             Name = name;
+            isAlarmEnabled = true;
             RestockTimer = new DispatcherTimer();
             RestockTimer.Tick += new EventHandler((s, e) => PlaySound());
             RestockTimer.Interval = restockTime;
 
-            pathToWavAlert = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, $@"sounds\default.wav");
+            pathToWavAlert = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $@"sounds\{name.ToLower(CultureInfo.InvariantCulture)}.wav");
+            if (!File.Exists(pathToWavAlert))
+            {
+                pathToWavAlert = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $@"sounds\default.wav");
+                if (!File.Exists(pathToWavAlert))
+                {
+                    // maybe should throw an Exception if default.wav doesn't exist?
+                }
+            }
+
+            mediaPlayer = new();
+            mediaPlayer.Volume = 5 / 100f;
         }
 
         public Trader(string name) :
@@ -69,6 +83,7 @@ namespace TarkAlarms.Classes
 
         internal void SetTimerControl(FrameworkElement control)
         {
+            boundControl = control;
             switch (control)
             {
                 case TextBlock:
@@ -86,12 +101,12 @@ namespace TarkAlarms.Classes
 
         private void PlaySound()
         {
-            MediaPlayer mediaPlayer = new MediaPlayer();
-
-            mediaPlayer.Open(new Uri(pathToWavAlert));
-            mediaPlayer.Volume = 5 / 100f;
-            mediaPlayer.Play();
-            
+            if (isAlarmEnabled)
+            {
+                mediaPlayer.Open(new Uri(pathToWavAlert));
+                mediaPlayer.Play();
+                mediaPlayer.Close();
+            }
         }
     }
 }
