@@ -7,6 +7,10 @@ namespace TarkAlarms.HowLeeWouldDoit
 {
     public class LeesTrader : FuckDependencyProperties
     {
+        
+        // This is essentially how often the timer will check if it should alarm or whatever, and update the UI. I wouldn't recommend having it higher than about 500.
+        private const int TIMER_TICK_MS = 5;
+
         /// <summary>
         /// The name fo the trader. Ultimately irrelevant to the timer  other than looking pretty
         /// </summary>
@@ -48,7 +52,7 @@ namespace TarkAlarms.HowLeeWouldDoit
         {
             
             _internalTimer = new DispatcherTimer(DispatcherPriority.Normal);
-            _internalTimer.Interval = TimeSpan.FromSeconds(1);
+            _internalTimer.Interval = TimeSpan.FromMilliseconds(TIMER_TICK_MS);
             _internalTimer.Tick += TimerTick;
             _internalTimer.Start();
 
@@ -56,12 +60,13 @@ namespace TarkAlarms.HowLeeWouldDoit
 
         private void TimerTick(object? sender, EventArgs e)
         {
-            if (DateTime.UtcNow > (ResetTime + RestockTime))
+            if (DateTime.UtcNow >= (ResetTime + RestockTime))
             {
                 _internalTimer.Stop();
                 if (AutoReset) ResetTimer();
                 if (AudibleAlarm) SoundPlayer.PlayDefault();
             }
+            UpdateBindings();
         }
 
         private void UpdateBindings()

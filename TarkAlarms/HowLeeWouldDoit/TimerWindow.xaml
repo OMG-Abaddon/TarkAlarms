@@ -17,12 +17,13 @@
         <ItemsControl Grid.Row="1" ItemsSource="{Binding Traders}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="local:LeesTrader">
-                    <Border>
-
-                        <StackPanel>
-                            <TextBlock Text="{Binding Name}"></TextBlock>
-                            <TextBlock Text="{Binding PercentageComplete}"></TextBlock>
-                            <TextBlock Text="{Binding TimeRemaining}"></TextBlock>
+                    <Border BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <StackPanel Margin="3">
+                            <TextBlock Text="{Binding Name}" FontSize="14pt" FontWeight="Light"></TextBlock>
+                            <TextBlock><Run Text="Progress: " FontWeight="Bold"/><Run Text="{Binding PercentageComplete, StringFormat='P1', Mode=OneWay}"/></TextBlock>
+                            <TextBlock><Run Text="Time Remaining: " FontWeight="Bold"/><Run Text="{Binding TimeRemaining, StringFormat=hh\\:mm\\:ss, Mode=OneWay}"/></TextBlock>
+                            <CheckBox IsChecked="{Binding AudibleAlarm}" Content="Make Sound?"></CheckBox>
+                            <CheckBox IsChecked="{Binding AutoReset}" Content="Reset Automatically?"></CheckBox>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
