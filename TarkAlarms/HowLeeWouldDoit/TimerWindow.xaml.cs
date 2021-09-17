@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TarkAlarms.Classes;
 
 namespace TarkAlarms.HowLeeWouldDoit
 {
@@ -25,6 +26,13 @@ namespace TarkAlarms.HowLeeWouldDoit
         public TimerWindow()
         {
             InitializeComponent();
+
+            Traders.Add(new LeesTrader{Name = "Trader 10s", RestockTime = TimeSpan.FromSeconds(10)});
+            Traders.Add(new LeesTrader { Name = "Trader 1m", RestockTime = TimeSpan.FromMinutes(1) });
+            Traders.Add(new LeesTrader { Name = "Trader 2m", RestockTime = TimeSpan.FromMinutes(2) });
+            Traders.Add(new LeesTrader { Name = "Trader Unspecified"});
+            Traders.Add(new LeesTrader());
+
         }
     }
 }

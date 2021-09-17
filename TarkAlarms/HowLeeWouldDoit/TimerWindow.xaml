@@ -17,9 +17,14 @@
         <ItemsControl Grid.Row="1" ItemsSource="{Binding Traders}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="local:LeesTrader">
-                    <StackPanel>
-                        <TextBlock></TextBlock>
-                    </StackPanel>
+                    <Border>
+
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                            <TextBlock Text="{Binding PercentageComplete}"></TextBlock>
+                            <TextBlock Text="{Binding TimeRemaining}"></TextBlock>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>
