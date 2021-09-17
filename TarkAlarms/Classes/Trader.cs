@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Timers;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
@@ -63,15 +58,15 @@ namespace TarkAlarms.Classes
             pathToWavAlert = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, $@"sounds\default.wav");
         }
 
-        internal void SetTimerControl(TextBlock textBlock)
-        {
-            RestockTimer.Tick += new EventHandler((s, e) => PlaySound());
-        }
-
         public Trader(string name) :
             this(name, new TimeSpan(3, 0, 0))
         {
 
+        }
+
+        internal void SetTimerControl(TextBlock textBlock)
+        {
+            RestockTimer.Tick += new EventHandler((s, e) => PlaySound());
         }
 
         public void StartRestockTimer()

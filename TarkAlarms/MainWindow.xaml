@@ -18,12 +18,17 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid>
-            <Label Content="Prapor:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
+            <StackPanel>
+                
             <TextBlock Name="txbClockPrapor" Text="CLOCK_PRAPOR" />
-        </Grid>
-        <Grid Grid.Column="3" Margin="0,217,0,0" Grid.RowSpan="2" DataContext="{Binding}">
-            <Label Content="IRL TIME:" HorizontalAlignment="Left" Margin="-246,-18,0,0" VerticalAlignment="Top"/>
-            <TextBlock Name="txbClockIrl" Text="CLOCK_IRL" />
+            <TextBlock Name="txbClockTherapist" Text="CLOCK_THERAPIST" />
+            <TextBlock Name="txbClockFence" Text="CLOCK_FENCE" />
+            <TextBlock Name="txbClockSkier" Text="CLOCK_SKIER" />
+            <TextBlock Name="txbClockPeacekeeper" Text="CLOCK_PEACEKEEPER" />
+            <TextBlock Name="txbClockMechanic" Text="CLOCK_MECHANIC" />
+            <TextBlock Name="txbClockRagman" Text="CLOCK_RAGMAN" />
+            <TextBlock Name="txbClockJaeger" Text="CLOCK_JAEGER" />
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

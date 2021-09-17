@@ -1,12 +1,7 @@
-﻿using System.Windows;
-using System.Timers;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using TarkAlarms.Classes;
-using System.Windows.Threading;
-using System.Diagnostics;
-using System.Windows.Controls;
-using System.Linq;
 
 namespace TarkAlarms
 {
@@ -15,7 +10,6 @@ namespace TarkAlarms
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer restockTimer;
 
         public List<Trader> Traders { get; private set; }
 
@@ -31,18 +25,6 @@ namespace TarkAlarms
             "Jaeger",
         };
 
-        //public List<string> TraderDictionary = new Dictionary<int, string>()
-        //    {
-        //        {0,"Prapor"},
-        //        {1,"Therapist"},
-        //        {2,"Fence"},
-        //        {3,"Skier"},
-        //        {4,"Peacekeeper"},
-        //        {5,"Mechanic"},
-        //        {6,"Ragman"},
-        //        {7,"Jaeger"},
-
-        //    };
 
         public MainWindow()
         {
@@ -62,9 +44,26 @@ namespace TarkAlarms
                 ragman = new Trader("Ragman"),
                 jaeger = new Trader("Jaeger");
 
+            prapor.RestockTimer.Interval = new TimeSpan(0, 0, 2); //test
+
             prapor.SetTimerControl(txbClockPrapor);
-            prapor.RestockTimer.Interval = new TimeSpan(0, 0, 2);
+            therapist.SetTimerControl(txbClockTherapist);
+            fence.SetTimerControl(txbClockFence);
+            skier.SetTimerControl(txbClockSkier);
+            peacekeeper.SetTimerControl(txbClockPeacekeeper);
+            mechanic.SetTimerControl(txbClockMechanic);
+            ragman.SetTimerControl(txbClockRagman);
+            jaeger.SetTimerControl(txbClockJaeger);
+
             prapor.StartRestockTimer();
+            therapist.StartRestockTimer();
+            fence.StartRestockTimer();
+            skier.StartRestockTimer();
+            peacekeeper.StartRestockTimer();
+            mechanic.StartRestockTimer();
+            ragman.StartRestockTimer();
+            jaeger.StartRestockTimer();
+
 
         }
 
