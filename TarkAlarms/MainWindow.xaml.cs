@@ -44,7 +44,7 @@ namespace TarkAlarms
                 ragman = new Trader("Ragman"),
                 jaeger = new Trader("Jaeger");
 
-            prapor.RestockTimer.Interval = new TimeSpan(0, 0, 2); //test
+            //prapor.RestockTimer.Interval = new TimeSpan(0, 0, 2); //test
 
             prapor.SetTimerControl(txbClockPrapor);
             therapist.SetTimerControl(txbClockTherapist);
