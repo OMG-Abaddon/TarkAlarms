@@ -20,13 +20,6 @@ namespace TarkAlarms
             set { _Traders = value; }
         }
 
-        // Using a DependencyProperty as the backing store for Traders.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TradersProperty =
-            DependencyProperty.Register("Traders", typeof(Trader[]), typeof(ownerclass), new PropertyMetadata(0));
-
-
-
-
         public MainWindow()
         {
             InitializeComponent();
