@@ -48,8 +48,7 @@ namespace TarkAlarms.Classes
 
     public class Trader
     {
-        private static string defaultSoundFile = "default";
-        private string pathWavAlert;
+        private string pathToWavAlert;
 
         public string Name { get; set; }
         public DispatcherTimer RestockTimer { get; set; }
@@ -61,7 +60,7 @@ namespace TarkAlarms.Classes
             RestockTimer = new DispatcherTimer();
             RestockTimer.Interval = restockTime;
 
-            pathWavAlert = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, $@"sounds\default.wav");
+            pathToWavAlert = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, $@"sounds\default.wav");
         }
 
         internal void SetTimerControl(TextBlock textBlock)
@@ -70,7 +69,7 @@ namespace TarkAlarms.Classes
         }
 
         public Trader(string name) :
-            this(name, new TimeSpan(24, 0, 0))
+            this(name, new TimeSpan(3, 0, 0))
         {
 
         }
@@ -82,12 +81,12 @@ namespace TarkAlarms.Classes
 
         private void PlaySound()
         {
-            using (SoundPlayer soundPlayer = new SoundPlayer())
-            {
-                soundPlayer.SoundLocation = pathWavAlert;
-                soundPlayer.Load();
-                soundPlayer.Play();
-            }
+            MediaPlayer mediaPlayer = new MediaPlayer();
+
+            mediaPlayer.Open(new Uri(pathToWavAlert));
+            mediaPlayer.Volume = 5 / 100f;
+            mediaPlayer.Play();
+            
         }
     }
 }

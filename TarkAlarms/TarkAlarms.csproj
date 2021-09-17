@@ -7,4 +7,10 @@
     <Configurations>Debug;Release;Debug with resources</Configurations>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="Sounds\default.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

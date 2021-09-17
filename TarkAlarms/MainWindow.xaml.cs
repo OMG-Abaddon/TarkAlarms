@@ -66,63 +66,6 @@ namespace TarkAlarms
             prapor.RestockTimer.Interval = new TimeSpan(0, 0, 2);
             prapor.StartRestockTimer();
 
-            //foreach (Trader trader in Traders)
-            //{
-            //    switch (trader.Name)
-            //    {
-            //        case TraderNames.Prapor:
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            ////}
-
-            //Traders.Add(new Trader(TraderNames.Prapor));
-            //Traders.Add(new Trader(TraderNames.Therapist));
-            //Traders.Add(new Trader(TraderNames.Fence));
-            //Traders.Add(new Trader(TraderNames.Skier));
-            //Traders.Add(new Trader(TraderNames.Peacekeeper));
-            //Traders.Add(new Trader(TraderNames.Mechanic));
-            //Traders.Add(new Trader(TraderNames.Ragman));
-            //Traders.Add(new Trader(TraderNames.Jaeger));
-
-
-
-
-
-
-
-
-            //{
-            //    new Trader(, DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Therapist", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Fence", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Skier", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Peacekeeper", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Mechanic", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Ragman", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //    new Trader("Jaeger", DateTime.Now.AddMinutes(5),DateTime.Now.AddMinutes(-20),new TimeSpan(0,25,0)),
-            //};
-
-
-
-            //this.Traders = new Trader[]
-            //{
-            //    new Trader(TraderNames.Prapor),
-            //    new Trader(TraderNames.Therapist),
-            //    new Trader(TraderNames.Fence),
-            //    new Trader(TraderNames.Skier),
-            //    new Trader(TraderNames.Peacekeeper),
-            //    new Trader(TraderNames.Mechanic),
-            //    new Trader(TraderNames.Ragman),
-            //    new Trader(TraderNames.Jaeger),
-            //};
-
-            //foreach (Trader trader in this.Traders)
-            //{
-            //    trader.RestockTimer.Tick += (s, e) => MainWindow.
-            //    trader.StartRestockTimer();
-            //}
         }
 
     }
