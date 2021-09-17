@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TarkAlarms"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="TarkAlarms" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -19,7 +19,11 @@
         </Grid.RowDefinitions>
         <Grid>
             <Label Content="Prapor:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
-            <Label Content="PRAPOR__TIME" HorizontalAlignment="Left" Margin="63,181,0,0" VerticalAlignment="Top"/>
+            <TextBlock Name="txbClockPrapor" Text="CLOCK_PRAPOR" />
+        </Grid>
+        <Grid Grid.Column="3" Margin="0,217,0,0" Grid.RowSpan="2" DataContext="{Binding}">
+            <Label Content="IRL TIME:" HorizontalAlignment="Left" Margin="-246,-18,0,0" VerticalAlignment="Top"/>
+            <TextBlock Name="txbClockIrl" Text="CLOCK_IRL" />
         </Grid>
     </Grid>
 </Window>
