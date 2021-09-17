@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using TarkAlarms.Classes;
+using TarkAlarms.HowLeeWouldDoit;
 
 namespace TarkAlarms
 {
@@ -67,6 +68,10 @@ namespace TarkAlarms
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new TimerWindow().Show();
+        }
     }
 
 
