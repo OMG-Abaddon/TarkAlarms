@@ -9,6 +9,7 @@
 
         /// <summary>
         /// Plays the wav async. No idea what happens if you try to play multiple at the same time. Maybe it'd be wise to not be static, but wavs are heavy, so this is better
+        /// Hector> Tested several dudes at once, no problems found.
         /// </summary>
         internal static void PlayDefault()
         {

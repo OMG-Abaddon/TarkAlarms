@@ -79,7 +79,7 @@ namespace TarkAlarms.Traders
         public void ResetTimer(DateTime? resetTime = null)
         {
             _internalTimer.Stop();
-            ResetTime = resetTime ?? DateTime.UtcNow.Add(RestockTime);
+            ResetTime = resetTime ?? DateTime.UtcNow; // Shouldnt we add .Add(RestockTime);
             _internalTimer.Start();
         }
     }

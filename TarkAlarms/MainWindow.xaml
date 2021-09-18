@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="TarkAlarms" Height="500" Width="1000"
         DataContext="{Binding RelativeSource={RelativeSource Self}}">
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"></Grid>
+        <Grid ShowGridLines="True" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"></Grid>
         <ItemsControl Grid.Row="1" ItemsSource="{Binding Traders}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="local:Trader">
@@ -29,9 +29,7 @@
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel>
-
-                    </StackPanel>
+                    <UniformGrid Rows="2" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
