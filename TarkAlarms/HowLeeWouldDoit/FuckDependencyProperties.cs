@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using TarkAlarms.HowLeeWouldDoit.Annotations;
+using TarkAlarms.Traders.Annotations;
 
-namespace TarkAlarms.HowLeeWouldDoit
+namespace TarkAlarms.Traders
 {
     public abstract class FuckDependencyProperties : INotifyPropertyChanged
     {

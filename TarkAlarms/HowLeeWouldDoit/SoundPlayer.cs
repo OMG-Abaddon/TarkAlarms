@@ -1,4 +1,4 @@
-﻿namespace TarkAlarms.HowLeeWouldDoit
+﻿namespace TarkAlarms.Traders
 {
     static class SoundPlayer
     {

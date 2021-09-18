@@ -7,55 +7,7 @@
         mc:Ignorable="d"
         Title="TarkAlarms" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-            <Label Content="Prapor" />
-            <TextBlock Name="txbClockPrapor" Text="CLOCK_PRAPOR" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
-            <Label Content="Therapist" />
-            <TextBlock Name="txbClockTherapist" Text="CLOCK_THERAPIST" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0">
-            <Label Content="Fence" />
-            <TextBlock Name="txbClockFence" Text="CLOCK_FENCE" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="0">
-            <Label Content="Skier" />
-            <TextBlock Name="txbClockSkier" Text="CLOCK_SKIER" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
-            <Label Content="Peacekeeper" />
-            <TextBlock Name="txbClockPeacekeeper" Text="CLOCK_PEACEKEEPER" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-            <Label Content="Mechanic" />
-            <TextBlock Name="txbClockMechanic" Text="CLOCK_MECHANIC" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1">
-            <Label Content="Ragman" />
-            <TextBlock Name="txbClockRagman" Text="CLOCK_RAGMAN" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.Row="1">
-            <Label Content="Jaeger" />
-            <TextBlock Name="txbClockJaeger" Text="CLOCK_JAEGER" />
-            </StackPanel>
-        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Left" Margin="169,18,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        
+        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Window>

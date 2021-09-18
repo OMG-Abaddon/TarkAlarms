@@ -3,9 +3,9 @@ using System.DirectoryServices.ActiveDirectory;
 using System.Threading;
 using System.Windows.Threading;
 
-namespace TarkAlarms.HowLeeWouldDoit
+namespace TarkAlarms.Traders
 {
-    public class LeesTrader : FuckDependencyProperties
+    public class Trader : FuckDependencyProperties
     {
         
         // This is essentially how often the timer will check if it should alarm or whatever, and update the UI. I wouldn't recommend having it higher than about 500.
@@ -48,7 +48,7 @@ namespace TarkAlarms.HowLeeWouldDoit
 
         private DispatcherTimer _internalTimer;
 
-        public LeesTrader()
+        public Trader()
         {
             
             _internalTimer = new DispatcherTimer(DispatcherPriority.Normal);
