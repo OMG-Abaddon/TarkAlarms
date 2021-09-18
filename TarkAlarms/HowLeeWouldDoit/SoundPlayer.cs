@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Accessibility;
-
-namespace TarkAlarms.HowLeeWouldDoit
+﻿namespace TarkAlarms.HowLeeWouldDoit
 {
     static class SoundPlayer
     {
         private const string DEFAULT_FILENAME = "Sounds/default.wav";
 
-        private static bool _initiated;
+        private static bool _initiated = false;
         private static System.Media.SoundPlayer _player;
 
         /// <summary>
@@ -25,8 +20,7 @@ namespace TarkAlarms.HowLeeWouldDoit
         {
             _player = new System.Media.SoundPlayer(DEFAULT_FILENAME);
             _player.Load(); //fuck async lol I'm lazy
-
+            _initiated = true;
         }
-
     }
 }
