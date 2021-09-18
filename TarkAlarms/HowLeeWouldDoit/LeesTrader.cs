@@ -79,8 +79,7 @@ namespace TarkAlarms.HowLeeWouldDoit
         public void ResetTimer(DateTime? resetTime = null)
         {
             _internalTimer.Stop();
-            var actualResetTime = resetTime ?? DateTime.UtcNow;
-            ResetTime = actualResetTime;
+            ResetTime = resetTime ?? DateTime.UtcNow.Add(RestockTime);
             _internalTimer.Start();
         }
     }
