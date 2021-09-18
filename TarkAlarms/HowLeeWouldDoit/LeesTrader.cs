@@ -24,12 +24,12 @@ namespace TarkAlarms.HowLeeWouldDoit
         /// <summary>
         /// How long the timer lasts
         /// </summary>
-        public TimeSpan RestockTime { get; set; } = TimeSpan.FromMinutes(1);
+        public TimeSpan RestockTime { get; set; } = TimeSpan.FromHours(3);
 
         /// <summary>
         /// If the timer will auto reset when it runs out
         /// </summary>
-        public bool AutoReset { get; set; } = false;
+        public bool AutoReset { get; set; } = true;
 
         /// <summary>
         /// If the timer will play noise when it resets
