@@ -5,9 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TarkAlarms"
         mc:Ignorable="d"
-        Title="TarkAlarms" Height="450" Width="800">
+        Title="TarkAlarms" Height="500" Width="1000"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <Grid>
-        
-        <Button Content="Button" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="Button_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"></Grid>
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Traders}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="local:Trader">
+                    <Border BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <StackPanel Margin="3">
+                            <TextBlock Text="{Binding Name}" FontSize="14pt" FontWeight="Light"></TextBlock>
+                            <TextBlock><Run Text="Progress: " FontWeight="Bold"/><Run Text="{Binding PercentageComplete, StringFormat='P0', Mode=OneWay}"/></TextBlock>
+                            <TextBlock><Run Text="Time Remaining: " FontWeight="Bold"/><Run Text="{Binding TimeRemaining, StringFormat=hh\\:mm\\:ss, Mode=OneWay}"/></TextBlock>
+                            <CheckBox IsChecked="{Binding AudibleAlarm}" Content="Make Sound?"></CheckBox>
+                            <CheckBox IsChecked="{Binding AutoReset}" Content="Reset Automatically?"></CheckBox>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel>
+
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
 </Window>
