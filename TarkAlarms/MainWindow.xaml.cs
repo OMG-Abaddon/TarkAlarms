@@ -44,9 +44,9 @@ namespace TarkAlarms
                 mechanic = new Trader("Mechanic"),
                 ragman = new Trader("Ragman"),
                 jaeger = new Trader("Jaeger");
-
-            //prapor.RestockTimer.Interval = new TimeSpan(0, 0, 2); //test
-
+#if DEBUG
+            prapor.RestockTimer.Interval = new TimeSpan(0, 0, 5); //test
+#endif
             prapor.SetTimerControl(txbClockPrapor);
             therapist.SetTimerControl(txbClockTherapist);
             fence.SetTimerControl(txbClockFence);
@@ -73,6 +73,4 @@ namespace TarkAlarms
             new TimerWindow().Show();
         }
     }
-
-
 }
